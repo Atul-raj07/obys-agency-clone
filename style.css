@@ -16,6 +16,11 @@ width: 100%;
     position: fixed;
     z-index: 99;
     padding: 2vw 3vw ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#textarea{
 }
 .txtload h1{
     font-size: 5vw;

@@ -27,8 +27,23 @@ ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
 ScrollTrigger.refresh();
 
-// gsap.to("#loader",{
-//   y: "-100%",
-//   duration:2,
-//   delay:2
-// })
+
+var timer = 0;
+var load = document.querySelector("#load")
+setInterval(() => {
+  if (timer<100) {
+    timer++
+    console.log(timer)
+    load.innerHTML = timer
+  }else{
+    gsap.to("#loader",{
+      y: "-100%",
+      duration:1,
+      // delay:2
+    })
+    
+  }
+
+  clearInterval()
+}, 40);
+
