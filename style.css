@@ -15,15 +15,64 @@ width: 100%;
     background-color: #151515;
     position: fixed;
     z-index: 99;
-    padding: 2vw 3vw ;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#textarea{
+    padding: 3vw ;
+    padding-top: 7vh;
 }
 .txtload h1{
-    font-size: 5vw;
+    width: 100%;
+    font-size: 7vw;
+    text-transform: uppercase;
+    text-align: center;
+    text-align: start;
+    margin-top: 2px;
+    display: flex;
+    padding: 0px 1vh;
+}
+#timer{
+    padding: 1vw;
+    display: flex ;
+    align-items: start;
+    justify-content: center;
+    margin-right: 2vw;
+}
+.txtload h1 span{
+    font-size: 2vw;
+}
+.txtload h1 #now{
+    /* color: transparent; */
+    font-size: 7vw;
+    margin-left: 3vw;
+    animation-name: now;
+    animation-duration: 2s;
+    animation-timing-function: all ease;
+    animation-iteration-count: infinite;
+}
+@keyframes now {
+    0%{
+    font-family:plain ;
+    /* color: white; */
+    }
+    45%{
+    font-family:silkserif ;
+    -webkit-text-stroke: rgb(255, 255, 255) 2px;
+    color: transparent;
+    }
+    50%{
+    font-family:plain ;
+    /* color: white; */
+
+    }
+    95%{
+    font-family:silkserif ;
+    -webkit-text-stroke: rgb(255, 255, 255) 2px;
+    color: transparent;
+    }
+    100%{
+    font-family:plain ;
+    /* color: white; */
+
+    }
+
 }
 #page1{
     height: 100vh;

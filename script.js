@@ -30,13 +30,20 @@ ScrollTrigger.refresh();
 
 var timer = 0;
 var load = document.querySelector("#load")
+var tl = gsap.timeline()
 setInterval(() => {
   if (timer<100) {
     timer++
     console.log(timer)
     load.innerHTML = timer
   }else{
-    gsap.to("#loader",{
+    tl.to(".txtload h1",{
+
+      opacity:0,
+      duration:1,
+      
+    })
+    tl.to("#loader",{
       y: "-100%",
       duration:1,
       // delay:2
