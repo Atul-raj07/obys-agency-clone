@@ -37,8 +37,10 @@ setInterval(() => {
     console.log(timer)
     load.innerHTML = timer
   }else{
-    tl.to(".txtload h1",{
-
+    tl.to(".txtload",{
+      stagger:{
+        amount:-0.5
+      },
       opacity:0,
       duration:1,
       
@@ -53,4 +55,17 @@ setInterval(() => {
 
   clearInterval()
 }, 40);
-
+Shery.mouseFollower({
+  //Parameters are optional.
+  // skew: true,
+  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+  duration: 1,
+});
+Shery.imageMasker(".mask-target" /* Element to target.*/, {
+  //Parameters are optional.
+  mouseFollower: true,
+  text: "Shery",
+  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+  // duration: 1,
+})
+Shery.mouseFollower();

@@ -2,7 +2,7 @@
 margin: 0%;
 padding: 0%;
 box-sizing: border-box;
-font-family: plain light;
+font-family: plain;
 color: whitesmoke;
 }
 html,body{
@@ -15,8 +15,8 @@ width: 100%;
     background-color: #151515;
     position: fixed;
     z-index: 99;
-    padding: 3vw ;
-    padding-top: 7vh;
+    padding: 7vw;
+    display: none;
 }
 .txtload h1{
     width: 100%;
@@ -36,7 +36,9 @@ width: 100%;
     margin-right: 2vw;
 }
 .txtload h1 span{
-    font-size: 2vw;
+    font-size: 3vw;
+    font-family: Silk Serif;
+
 }
 .txtload h1 #now{
     /* color: transparent; */
@@ -52,9 +54,9 @@ width: 100%;
     font-family:plain ;
     /* color: white; */
     }
-    45%{
-    font-family:silkserif ;
-    -webkit-text-stroke: rgb(255, 255, 255) 2px;
+    45%{   
+     font-family: Silk Serif;
+    -webkit-text-stroke: rgb(255, 255, 255) .5px;
     color: transparent;
     }
     50%{
@@ -63,8 +65,8 @@ width: 100%;
 
     }
     95%{
-    font-family:silkserif ;
-    -webkit-text-stroke: rgb(255, 255, 255) 2px;
+        font-family: Silk Serif;
+    -webkit-text-stroke: rgb(255, 255, 255) .5px;
     color: transparent;
     }
     100%{
@@ -74,15 +76,111 @@ width: 100%;
     }
 
 }
+.txtload:nth-child(3){
+    height: 10vw;
+}
+.txtload p{
+    margin-top: 3vw;
+    padding-left: 25vw;
+    /* background-color: red; */
+    display: inline-block;
+}
+#main{
+    background-color: #151515;
+}
+.mousefollower{
+    height: 3vw;
+    width: 3vw;
+    /* border-radius: 50%; */
+    
+    background-color: transparent !important;
+    mix-blend-mode: normal;
+    border: .5px solid rgb(162, 162, 162);
+}
 #page1{
     height: 100vh;
     width: 100%;
-    background-color: salmon;
+    /* background-color: salmon; */
     position: relative;
+}
+nav{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 3vw 5vw;
+}
+#nav-part1{
+    display: flex;
+    align-items: start;
+    gap: 3vw;
+}
+#logo{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+#nav-part1 h6{
+    font-size: 1vw;
+    font-weight: 100;
+    margin-left: 14vw;
+}
+#nav-part2{
+    display: flex;
+    gap: 2vw;
+}
+#nav-part2 a{
+    text-decoration: none;
+    font-size: 1vw;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+#page1 h1{
+    font-size: 7.5vw;
+    text-transform: uppercase;
+    margin-top: 5vw;
+    padding-left: 29vw;
+    font-weight: 400;
+    line-height: 7.8vw;
+    position: relative;
+}
+#page1 h1::before{
+    content: "01";
+    position: absolute;
+    left: 20vw;
+    top: -5%;
+    font-family: silk serif;
+    font-size: 3vw;
 }
 #page2{
     height: 100vh;
     width: 100%;
-    background-color: rgb(130, 24, 12);
+    /* background-color: rgb(130, 24, 12); */
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+#page2 #video{
+    height: 35vw;
+    width: 60vw;
+    /* overflow: hidden; */
+    position: relative;
+    background-color: aqua;
+}
+#video img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 99;
+    /* z-index: -1; */
+}
+#video video{
+    height: 100%;
+    width: 100%;
+    /* z-index: 99; */
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    object-fit: cover; 
 }
