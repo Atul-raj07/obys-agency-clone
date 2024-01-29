@@ -165,14 +165,13 @@ nav{
     width: 60vw;
     /* overflow: hidden; */
     position: relative;
-    background-color: aqua;
 }
 #video img{
     height: 100%;
     width: 100%;
     object-fit: cover;
     position: relative;
-    z-index: 99;
+    z-index: 9;
     /* z-index: -1; */
 }
 #video video{

@@ -15,7 +15,7 @@ ScrollTrigger.scrollerProxy("#main", {
     return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
   }, // we don't have to define a scrollLeft because we're only scrolling vertically.
   getBoundingClientRect() {
-    return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+    return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
   },
   // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
   pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
@@ -27,34 +27,78 @@ ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
 ScrollTrigger.refresh();
 
+function loadingpage() {
+  var timer = 0;
+  var load = document.querySelector("#load")
+  var tl = gsap.timeline()
+  setInterval(() => {
+    if (timer < 100) {
+      timer++
+      console.log(timer)
+      load.innerHTML = timer
+    } else {
+      tl.to(".txtload", {
+        stagger: {
+          amount: -0.5
+        },
+        opacity: 0,
+        duration: .5,
 
-var timer = 0;
-var load = document.querySelector("#load")
-var tl = gsap.timeline()
-setInterval(() => {
-  if (timer<100) {
-    timer++
-    console.log(timer)
-    load.innerHTML = timer
+      })
+      tl.to("#loader", {
+        y: "-100%",
+        duration: 2,
+        ease: "power4.out",
+      })
+
+    }
+    clearInterval()
+  }, 40);
+}
+loadingpage()
+
+function page1anim(){
+  Shery.makeMagnet("nav a",{
+   })
+   gsap.from("#page1 h1",{
+    y:"100%"
+   })
+}
+
+page1anim()
+function videoan() {
+  var video = document.querySelector("video")
+  var videoimg = document.querySelector("#video img")
+  var videodiv = document.querySelector("#video")
+  // var mousefollower = document.querySelectorAll(".mousefollower")
+  flag = 0
+  videodiv.addEventListener("click", function () {
+   if(flag == 0) {
+    videoimg.style.zIndex = "0"
+     video.style.zIndex = "99";
+    video.play()
+
+    flag = 1
+
   }else{
-    tl.to(".txtload",{
-      stagger:{
-        amount:-0.5
-      },
-      opacity:0,
-      duration:1,
-      
-    })
-    tl.to("#loader",{
-      y: "-100%",
-      duration:1,
-      // delay:2
-    })
-    
+    videoimg.style.zIndex = "99"
+   video.style.zIndex = "0";
+    video.pause()
+    flag = 0
   }
-
-  clearInterval()
-}, 40);
+  })
+  videodiv.addEventListener("mouseenter",function(){
+    gsap.to(".mousefollower",{
+      opacity : "0",
+    })
+  })
+  videodiv.addEventListener("mouseleave",function(){
+    gsap.to(".mousefollower",{
+      opacity : "1",
+    })
+  })
+}
+videoan()
 Shery.mouseFollower({
   //Parameters are optional.
   // skew: true,
