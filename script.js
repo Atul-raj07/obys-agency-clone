@@ -52,64 +52,125 @@ function loadingpage() {
       })
 
     }
+
     clearInterval()
   }, 40);
+  function page1anim() {
+    gsap.from("#page1 h1", {
+      y: "100%",
+      stagger: {
+        amount: 0.5
+      },
+      delay: 5
+    })
+    Shery.makeMagnet("nav a", {
+    })
+
+  }
+
+  page1anim()
+
 }
 loadingpage()
 
-function page1anim(){
-  Shery.makeMagnet("nav a",{
-   })
-   gsap.from("#page1 h1",{
-    y:"100%"
-   })
-}
 
-page1anim()
+
 function videoan() {
   var video = document.querySelector("video")
   var videoimg = document.querySelector("#video img")
   var videodiv = document.querySelector("#video")
+  var playicon = document.querySelector("#play")
   // var mousefollower = document.querySelectorAll(".mousefollower")
   flag = 0
   videodiv.addEventListener("click", function () {
-   if(flag == 0) {
-    videoimg.style.zIndex = "0"
-     video.style.zIndex = "99";
-    video.play()
+    if (flag == 0) {
+      videoimg.style.zIndex = "0"
+      video.style.zIndex = "99";
 
-    flag = 1
+      playicon.innerHTML = `<i class="ri-pause-mini-line"></i>`
+      video.play()
+      gsap.to("#play", {
+        scale: .7
+      })
+      flag = 1
 
-  }else{
-    videoimg.style.zIndex = "99"
-   video.style.zIndex = "0";
-    video.pause()
-    flag = 0
-  }
+    } else {
+      videoimg.style.zIndex = "99"
+      video.style.zIndex = "0";
+      playicon.innerHTML = `<i class="ri-play-fill"></i>`
+      video.pause()
+      gsap.to("#play", {
+        scale: 1
+      })
+      flag = 0
+    }
   })
-  videodiv.addEventListener("mouseenter",function(){
-    gsap.to(".mousefollower",{
-      opacity : "0",
+  videodiv.addEventListener("mouseenter", function () {
+    gsap.to(".mousefollower", {
+      opacity: "0",
     })
   })
-  videodiv.addEventListener("mouseleave",function(){
-    gsap.to(".mousefollower",{
-      opacity : "1",
+  videodiv.addEventListener("mouseleave", function () {
+    gsap.to(".mousefollower", {
+      opacity: "1",
+    })
+    gsap.to("#play", {
+      x: "70%",
+      y: "0%"
+    })
+  })
+  videodiv.addEventListener("mousemove", function (dets) {
+    gsap.to(playicon, {
+      x: dets.x - 1250,
+      y: dets.y - 80
     })
   })
 }
 videoan()
-Shery.mouseFollower({
-  //Parameters are optional.
-  // skew: true,
-  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-  duration: 1,
-});
-Shery.imageMasker(".mask-target" /* Element to target.*/, {
-  //Parameters are optional.
-  mouseFollower: true,
-  text: "Shery",
-  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-  // duration: 1,
-})
-Shery.mouseFollower();
+function page3() {
+  var demo = document.querySelectorAll(".demo")
+  demo.forEach(demo => {
+    demo.addEventListener("mouseenter", function () {
+      gsap.to(".demoname #olga", {
+        y: "-100%",
+      })
+    })
+    demo.addEventListener("mouseleave", function () {
+      gsap.to(".demoname #olga", {
+        y: "0%",
+      })
+    })
+   
+    demo.addEventListener("mouseenter", function () {
+      gsap.to(".demoname #ochi", {
+        y: "-100%",
+      })
+    })
+    demo.addEventListener("mouseleave", function () {
+      gsap.to(".demoname #ochi", {
+        y: "0%",
+      })
+    })
+   
+  });
+  Shery.imageEffect(".demoimg", {
+    style: 4, //Select Style
+    // debug: true, // Debug Panel
+    gooey: true,
+    config:  {"a":{"value":1.83,"range":[0,30]},"b":{"value":0.44,"range":[-1,1]},"zindex":{"value":"9996999","range":[-9999999,9999999]},"aspect":{"value":0.8571470132972409},"ignoreShapeAspect":{"value":true},"shapePosition":{"value":{"x":0,"y":0}},"shapeScale":{"value":{"x":1,"y":0.5}},"shapeEdgeSoftness":{"value":0.15,"range":[0,0.5]},"shapeRadius":{"value":0,"range":[0,2]},"currentScroll":{"value":0},"scrollLerp":{"value":0.07},"gooey":{"value":true},"infiniteGooey":{"value":true},"growSize":{"value":9.12,"range":[1,15]},"durationOut":{"value":1,"range":[0.1,5]},"durationIn":{"value":1.5,"range":[0.1,5]},"displaceAmount":{"value":0.5},"masker":{"value":true},"maskVal":{"value":1.31,"range":[1,5]},"scrollType":{"value":0},"geoVertex":{"range":[1,64],"value":1},"noEffectGooey":{"value":true},"onMouse":{"value":1},"noise_speed":{"value":1.07,"range":[0,10]},"metaball":{"value":0.34,"range":[0,2],"_gsap":{"id":18}},"discard_threshold":{"value":0.42,"range":[0,1]},"antialias_threshold":{"value":0.01,"range":[0,0.1]},"noise_height":{"value":0.44,"range":[0,2]},"noise_scale":{"value":4.58,"range":[0,100]}}
+    });
+}
+page3()
+
+
+function sheryanimatiom() {
+  Shery.mouseFollower({
+    //Parameters are optional.
+    // skew: true,
+    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+    duration: 1,
+  });
+
+  Shery.mouseFollower();
+}
+sheryanimatiom()
