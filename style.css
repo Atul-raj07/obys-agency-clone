@@ -453,3 +453,99 @@ h2 #line{
 #orange:hover{
     scale: 0.9;
 }
+#page4{
+    min-height: 100vh;
+    width: 100%;
+    /* padding-left: 30vw; */
+    border-bottom: 2px solid white;
+    margin-left: 30vw;
+}
+#page4 h2{
+    margin: 0;
+    padding: 0;
+}
+#page4 h2::before{
+    content: "03";   
+    position: absolute;
+    left: -10vw;
+    font-weight: 500;
+    top: 0%;
+    /* left: 0; */
+    font-family: silk serif;
+    font-size: 3vw;
+}
+#page4 p{
+    /* padding-left: 30vw; */
+    margin-top: 3vw;
+    font-size: 2.4vw;
+    font-weight: 300;
+    width: 40%;
+}
+#page4 #imgndpara{
+    display: flex;
+    margin-top: 5vw;
+    /* margin-left: 30vw; */
+    align-items: flex-start;
+    gap: 2vw;
+    /* position: relative; */
+}
+#page4 #img{
+    /* background-image: url(https://obys.agency/wp-content/uploads/2020/07/content-image01.jpg); */
+    height: 40vw;
+    width: 35vw;
+    /* background-position: center;
+    background-size: cover; */
+}
+#page4 #img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#page4 #imgndpara p{
+    padding: 0;
+    margin: 0;
+    font-weight: 200;
+    margin-bottom: 3vw;
+    /* margin-left: 2vw; */
+    font-size: 1.2vw;
+    width: 30%;
+}
+#page4 #bluebox{
+    min-height: 10vw;
+    width: 34vw;
+    background-color:#3F7DF4 ;
+    z-index: 99;
+    position: relative;
+    margin-left: 20vw;
+    margin-bottom: 5vw;
+    margin-top: -15vw;
+    padding: 5vw;
+}
+#page4 #bluebox li{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 2vw;
+    margin-top: 2vw;
+    border-bottom: 2px solid rgb(227, 227, 227);
+}
+#page4 #bluebox li h5{
+font-size: 1.5vw;
+font-weight: 400;
+}
+#page4 #bluebox li p{
+    font-size: 1vw;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+
+}
+#page5{
+    height: 100vh;
+    width: 100%;
+    background-color: red;
+}
+#page5 p{
+    margin-left: 30vw;
+    font-weight: 300;
+}

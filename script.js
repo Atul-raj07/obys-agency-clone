@@ -61,7 +61,7 @@ function loadingpage() {
       stagger: {
         amount: 0.5
       },
-      delay: 5
+      delay: 6
     })
     Shery.makeMagnet("nav a", {
     })
