@@ -130,8 +130,9 @@ videoan()
 function page3() {
   var demo = document.querySelectorAll(".demo")
   demo.forEach(demo => {
+    var olga = demo.querySelector("#olga")
     demo.addEventListener("mouseenter", function () {
-      gsap.to(".demoname #olga", {
+      gsap.to(olga, {
         y: "-100%",
       })
     })
@@ -163,6 +164,32 @@ function page3() {
 page3()
 
 
+function page5(){
+  
+  gsap.to(".work",{
+    x : -1000,
+    scrollTrigger:{
+      trigger:"#page5",
+      scroller:"#main",
+      markers:true,
+      end:"top -100%",
+      // start:"0%",
+      scrub:2
+    }
+  })
+  gsap.from(".right",{
+    x : -1000,
+  scrollTrigger:{
+    trigger:"#page5",
+    scroller:"#main",
+    markers:true,
+    end:"top -100%",
+    // start:"0%",
+    scrub:2
+  }
+  })
+}
+page5()
 function sheryanimatiom() {
   Shery.mouseFollower({
     //Parameters are optional.
