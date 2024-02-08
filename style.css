@@ -200,13 +200,16 @@ nav{
 }
 h2{
     font-size: 7.5vw;
-    padding-left: 30vw;
-    padding-right: 5vw;
     font-weight: 500;
     text-transform: uppercase;
-    position: relative;
+    /* margin-left: 30vw; */
 }
-h2::before{
+.page-header{
+    position: relative;
+    padding-left: 30vw;
+    padding-right: 5vw;
+}
+.page-header::before{
     content: "02";   
     position: absolute;
     left: 20vw;
@@ -215,8 +218,8 @@ h2::before{
     font-family: silk serif;
     font-size: 3vw;
 }
-h2 #line{
-    height: .5vh;
+.page-header .underline{
+    height: 2px;
     width: 100%;
     background-color: white;
     margin-top: 10vh;
@@ -233,7 +236,7 @@ h2 #line{
 }
 
 .demoname{
-    height: 3.5vw;
+    height: 4vw;
     position: relative;
     overflow: hidden;
 }
@@ -241,7 +244,7 @@ h2 #line{
     font-size: 3vw;
     text-transform: capitalize;
     position: relative;
-    transition: all ease-in;
+    transition: all ease-in .5s;
 
 }
 #page3 .demoimg{
@@ -278,17 +281,13 @@ h2 #line{
     font-size: 1vw;
 }
 .demo{
-    /* height: 40vw;
-    width: 24vw; */
     margin-right: 4vh;
     border-bottom: 2px solid rgba(230, 230, 230, 0.695);
     margin-top: 15vw;
 }
 .demo:nth-child(1){
-    /* background-color: yellow; */
     height: 40vw;
     width: 24vw;
-    /* display: inline-block; */
     margin-right: 4vh;
     border-bottom: 2px solid rgba(230, 230, 230, 0.695);
 }
@@ -296,15 +295,15 @@ h2 #line{
     height: 70%;
     width: 100%;  
 }
-#page3 .demoname #olga::after{
-    content: "olga prudka";
+#demos .demo:nth-child(1) .demoname h5::after{
+    content: "olga prudgka";
     font-size: 3vw;
     text-transform: uppercase;
     position: absolute;
     left: 0;
     top: 100%;
 }
-#page3 .demoname #ochi::after{
+#demos .demo:nth-child(2) .demoname h5::after{
     content: "ochi";
     font-size: 3vw;
     text-transform: uppercase;
@@ -312,6 +311,39 @@ h2 #line{
     left: 0;
     top: 100%;
 }
+#demos .demo:nth-child(5) .demoname h5::after{
+    content: "porsche taycan";
+    font-size: 3vw;
+    text-transform: capitalize;
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+#demos .demo:nth-child(6) .demoname h5::after{
+    content: "david laxer";
+    font-size: 3vw;
+    text-transform: capitalize;
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+#demos .demo:nth-child(7) .demoname h5::after{
+    content: "eminete";
+    font-size: 3vw;
+    text-transform: capitalize;
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+#demos .demo:nth-child(9) .demoname h5::after{
+    content: "makhno";
+    font-size: 3vw;
+    text-transform: capitalize;
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+
 .demo:nth-child(2){
     /* background-color: pink; */
     height: 46vw;
@@ -349,7 +381,7 @@ h2 #line{
     background-color: white;
     position: absolute;
     scale: 0;
-    transition: all ease-in .5s;
+    transition: all ease-in .3s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -432,6 +464,9 @@ h2 #line{
     height: 75%;
     width: 100%;
 }
+.demo:hover h5{
+    transform: translateY(-100%);
+}
 #orangecircle{
     height: 50vw;
     width: 100%;
@@ -456,15 +491,15 @@ h2 #line{
 #page4{
     min-height: 100vh;
     width: 100%;
-    /* padding-left: 30vw; */
-    border-bottom: 2px solid white;
-    margin-left: 30vw;
+    /* border-bottom: 2px solid white; */
+    padding-left: 30vw;
+    padding-right: 5vw;
 }
-#page4 h2{
+#page4 .page-header {
     margin: 0;
     padding: 0;
 }
-#page4 h2::before{
+#page4 .page-header::before{
     content: "03";   
     position: absolute;
     left: -10vw;
@@ -482,6 +517,7 @@ h2 #line{
 }
 #page4 #imgndpara{
     display: flex;
+    flex-shrink: 0;
     margin-top: 5vw;
     align-items: flex-start;
     gap: 2vw;
@@ -489,6 +525,7 @@ h2 #line{
 #page4 #img{
     height: 40vw;
     width: 35vw;
+    flex-shrink: 0;
 }
 #page4 #img img{
     height: 100%;
@@ -534,6 +571,12 @@ font-weight: 400;
     margin: 0;
 
 }
+#page4 .underline{
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    /* margin-right: 5vw; */
+}
 #page5{
     height: 100vh;
     width: 100%;
@@ -558,11 +601,17 @@ font-weight: 400;
     color: transparent;
     font-weight: 100;
 }
+#page5 h3 span{
+    font-size: 10vw;
+    /* margin-top: -.5vw; */
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+}
 .italic{
     font-family: silk serif;
-    /* font-weight: 100; */
+    font-weight: 100;
     font-size: 7vw;
-    margin-top: .5vw;
+    margin-top: -1vw;
 }
 #page5 .right{
     display: flex;
@@ -580,7 +629,164 @@ font-weight: 400;
     color: transparent;
     font-weight: 100;
 }
-#page6{
+footer{
     height: 100vh;
     width: 100%;
+    padding-left: 30vw;
+    padding-right: 5vw;
+}
+footer .page-header{
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+footer .page-header::before{
+    content: "04";   
+    position: absolute;
+    left: -10vw;
+    font-weight: 500;
+    top: 0%;
+    font-family: silk serif;
+    font-size: 3vw; 
+}
+footer h3 {
+    font-size: 7.5vw;
+    font-weight: 500;
+    -webkit-text-stroke: 2px white ;
+    color: transparent ;
+    text-transform: uppercase;
+    /* background-color: red; */
+    position: absolute;
+    left: 0;
+    top: -8%;
+    font-family: silk serif;
+}
+footer h3 span{
+    font-family: silk serif;
+    -webkit-text-stroke: 2px white ;
+    color: transparent ;
+    opacity: 0;
+}
+footer .page-header svg{
+    position: absolute;
+    width: 7vw;
+    top: 15%;
+    right: 10%;
+    transition: all ease .5s;
+}
+footer .page-header:hover svg{
+    right: 5%;
+}
+#footer-content{
+    height: 55%;
+    display: flex;
+    padding: 5vw 0;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* background-color: salmon; */
+    border-bottom: 2px solid white;
+}
+.list{
+    position: relative;
+    overflow: hidden;
+}
+#footer-content h6{
+    font-size: 2vw;
+    font-weight: 300;
+    text-transform: capitalize;
+    /* list-style: none; */
+    /* background-color: red; */
+    text-align: start;
+    position: relative;
+    transition: all ease-in .3s;
+}
+#footer-content .list:nth-child(2) h6::after{
+    content: "dribble";
+    font-size: 2vw;    
+    font-weight: 300;
+
+    text-transform: capitalize;
+    list-style: none;
+    position: absolute;
+    left: 0%;
+    /* overflow: hidden; */
+    top: 100%;
+}
+#footer-content .list:nth-child(3) h6::after{
+    content: "behance";
+    font-size: 2vw;
+    font-weight: 300;
+    text-transform: capitalize;
+    list-style: none;
+    position: absolute;
+    left: 0%;
+    top: 100%;
+}
+#footer-content .list:nth-child(4) h6::after{
+    content: "instagram";
+    font-size: 2vw;
+    font-weight: 300;
+    text-transform: capitalize;
+    list-style: none;
+    position: absolute;
+    left: 0%;
+    top: 100%;
+}
+#footer-content .list:nth-child(5) h6::after{
+    content: "facebook";
+    font-size: 2vw;
+    font-weight: 300;
+    text-transform: capitalize;
+    list-style: none;
+    position: absolute;
+    left: 0%;
+    top: 100%;
+}
+#footer-content .list:nth-child(6) h6::after{
+    content: "twitter";
+    font-size: 2vw;
+    font-weight: 300;
+    text-transform: capitalize;
+    list-style: none;
+    position: absolute;
+    left: 0%;
+    top: 100%;
+}
+#footer-content .list:nth-child(7) h6::after{
+    content: "youtube";
+    font-size: 2vw;
+    font-weight: 300;
+    text-transform: capitalize;
+    list-style: none;
+    position: absolute;
+    left: 0%;
+    top: 100%;
+}
+#footer-content .list:hover h6{
+    transform: translateY(-100%);
+}
+#footer-content h4{
+    margin-bottom: 1vw;
+    font-size: 1.2vw;
+    font-weight: 400;
+    text-transform: capitalize;
+
+}
+#footer-content .social:nth-child(3) .list h6{
+    text-decoration: underline;
+}
+#footer-content .social:nth-child(3) .list h6::after{
+    content: "info@Obys.Agency";
+    font-size: 2vw;
+    font-weight: 300;
+    text-transform: capitalize;
+    list-style: none;
+    position: absolute;
+    left: 0%;
+    top: 100%;
+}
+footer p{
+    font-size: 1vw;
+    font-weight: 300;
+    margin-top: 3vw;
 }

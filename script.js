@@ -73,6 +73,12 @@ function loadingpage() {
 }
 loadingpage()
 
+function menu(){
+  Shery.makeMagnet("#nav-part1 #logo .menu-opener__square", {
+  })
+
+}
+menu()
 
 
 function videoan() {
@@ -128,32 +134,6 @@ function videoan() {
 }
 videoan()
 function page3() {
-  var demo = document.querySelectorAll(".demo")
-  demo.forEach(demo => {
-    var olga = demo.querySelector("#olga")
-    demo.addEventListener("mouseenter", function () {
-      gsap.to(olga, {
-        y: "-100%",
-      })
-    })
-    demo.addEventListener("mouseleave", function () {
-      gsap.to(".demoname #olga", {
-        y: "0%",
-      })
-    })
-   
-    demo.addEventListener("mouseenter", function () {
-      gsap.to(".demoname #ochi", {
-        y: "-100%",
-      })
-    })
-    demo.addEventListener("mouseleave", function () {
-      gsap.to(".demoname #ochi", {
-        y: "0%",
-      })
-    })
-   
-  });
   Shery.imageEffect(".demoimg", {
     style: 4, //Select Style
     // debug: true, // Debug Panel
@@ -171,7 +151,7 @@ function page5(){
     scrollTrigger:{
       trigger:"#page5",
       scroller:"#main",
-      markers:true,
+      // markers:true,
       end:"top -100%",
       // start:"0%",
       scrub:2
@@ -182,7 +162,7 @@ function page5(){
   scrollTrigger:{
     trigger:"#page5",
     scroller:"#main",
-    markers:true,
+    // markers:true,
     end:"top -100%",
     // start:"0%",
     scrub:2
@@ -190,6 +170,49 @@ function page5(){
   })
 }
 page5()
+
+
+function footeranimation(){
+  var createtxt = document.querySelectorAll(".create")
+createtxt.forEach(createtxt => {
+  var text = createtxt.textContent 
+  var splittedtxt = text.split("")
+  var clutter = ""
+  splittedtxt.forEach(e => {
+    clutter += `<span>${e}</span>`
+  });
+  createtxt.innerHTML = clutter
+  // console.log(clutter)
+});
+
+var footerpagehead = document.querySelector("footer .page-header")
+footerpagehead.addEventListener("mouseenter",function(){
+  gsap.to("footer h3 span" ,{
+    stagger : 0.05,
+    opacity:1,
+    delay : .1
+  })
+  gsap.to("footer h2 span" ,{
+    stagger : 0.05,
+    opacity:0,
+    // duration :.2
+  })
+
+})
+footerpagehead.addEventListener("mouseleave",function(){
+  gsap.to("footer h3 span" ,{
+    stagger : 0.05,
+    opacity:0,
+    // duration :.2
+  })
+  gsap.to("footer h2 span" ,{
+    stagger : 0.05,
+    opacity:1,
+    delay : .1
+  })
+})
+}
+footeranimation()
 function sheryanimatiom() {
   Shery.mouseFollower({
     //Parameters are optional.
