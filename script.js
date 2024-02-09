@@ -76,7 +76,164 @@ loadingpage()
 function menu(){
   Shery.makeMagnet("#nav-part1 #logo .menu-opener__square", {
   })
+  var menubtn = document.querySelector("#logo .menu-opener__square")
+  var flag = 0
+  menubtn.addEventListener("click",function(){
+    if(flag == 0){
+    gsap.to("#logo .menu-opener__square .off",{
+      opacity : 0,
+    })
+    gsap.to("#page1 #menupage",{
+      opacity :1,
+      transform : "translateY(100%)",
+      duration : 1
+    })
+    gsap.from("#menulist .page-header h2",{
+      opacity:0,
+      delay:.5,
+      y: 200
+    })
+    gsap.from("#menupage .footer-content",{
+      opacity:0,
+      delay:1,
+      duration:.5,
+      ease: "power4.out",
+      // y:100
+    })
+    flag = 1
+    console.log("gyaba")
+    }
+    else{
+      gsap.to("#logo .menu-opener__square .off",{
+        opacity : 1,
+      })
+      gsap.from("#menulist .page-header h2",{
+        opacity:1,
+        duration :.5,
+      })
+      gsap.to("#page1 #menupage",{
+        opacity :0,
+      transform : "translateY(-100%)",
+      duration : 1.5,
+      delay:.5
+      })
 
+      flag = 0
+    console.log("aagya")
+
+    }
+  })
+  function menupagehead(){
+  var menupagehead1 = document.querySelector("#menulist .page-header:nth-child(1)")
+      menupagehead1.addEventListener("mouseenter",function(){
+      gsap.to("#menulist .page-header:nth-child(1) h3 span" ,{
+    stagger : 0.05,
+    opacity:1,
+    delay : .1
+  })
+  gsap.to("#menulist .page-header:nth-child(1) h2 span" ,{
+    stagger : 0.05,
+    opacity:0,
+    // duration :.2
+  })
+  
+})
+menupagehead1.addEventListener("mouseleave",function(){
+  gsap.to("#menulist .page-header:nth-child(1) h3 span" ,{
+    stagger : 0.05,
+    opacity:0,
+    // duration :.2
+  })
+  gsap.to("#menulist .page-header:nth-child(1) h2 span" ,{
+    stagger : 0.05,
+    opacity:1,
+    delay : .1
+  })
+})
+  
+  var menupagehead2 = document.querySelector("#menulist .page-header:nth-child(2)")
+      menupagehead2.addEventListener("mouseenter",function(){
+      gsap.to("#menulist .page-header:nth-child(2) h3 span" ,{
+    stagger : 0.05,
+    opacity:1,
+    delay : .1
+  })
+  gsap.to("#menulist .page-header:nth-child(2) h2 span" ,{
+    stagger : 0.05,
+    opacity:0,
+    // duration :.2
+  })
+  
+})
+menupagehead2.addEventListener("mouseleave",function(){
+  gsap.to("#menulist .page-header:nth-child(2) h3 span" ,{
+    stagger : 0.05,
+    opacity:0,
+    // duration :.2
+  })
+  gsap.to("#menulist .page-header:nth-child(2) h2 span" ,{
+    stagger : 0.05,
+    opacity:1,
+    delay : .1
+  })
+})
+  var menupagehead3 = document.querySelector("#menulist .page-header:nth-child(3)")
+      menupagehead3.addEventListener("mouseenter",function(){
+      gsap.to("#menulist .page-header:nth-child(3) h3 span" ,{
+    stagger : 0.05,
+    opacity:1,
+    delay : .1
+  })
+  gsap.to("#menulist .page-header:nth-child(3) h2 span" ,{
+    stagger : 0.05,
+    opacity:0,
+    // duration :.2
+  })
+  
+})
+menupagehead3.addEventListener("mouseleave",function(){
+  gsap.to("#menulist .page-header:nth-child(3) h3 span" ,{
+    stagger : 0.05,
+    opacity:0,
+    // duration :.2
+  })
+  gsap.to("#menulist .page-header:nth-child(3) h2 span" ,{
+    stagger : 0.05,
+    opacity:1,
+    delay : .1
+  })
+})
+  var menupagehead4 = document.querySelector("#menulist .page-header:nth-child(4)")
+      menupagehead4.addEventListener("mouseenter",function(){
+      gsap.to("#menulist .page-header:nth-child(4) h3 span" ,{
+    stagger : 0.05,
+    opacity:1,
+    delay : .1
+  })
+  gsap.to("#menulist .page-header:nth-child(4) h2 span" ,{
+    stagger : 0.05,
+    opacity:0,
+    // duration :.2
+  })
+  
+})
+menupagehead4.addEventListener("mouseleave",function(){
+  gsap.to("#menulist .page-header:nth-child(4) h3 span" ,{
+    stagger : 0.05,
+    opacity:0,
+    // duration :.2
+  })
+  gsap.to("#menulist .page-header:nth-child(4) h2 span" ,{
+    stagger : 0.05,
+    opacity:1,
+    delay : .1
+  })
+})
+
+
+
+  }
+menupagehead()
 }
 menu()
 

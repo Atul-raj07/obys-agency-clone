@@ -94,6 +94,7 @@ width: 100%;
     background-color: transparent !important;
     mix-blend-mode: normal;
     border: .5px solid rgb(162, 162, 162);
+    transform: scale(1.2) !important;
 }
 #page1{
     height: 100vh;
@@ -105,6 +106,7 @@ nav{
     align-items: start;
     justify-content: space-between;
     padding: 3vw 5vw;
+    background-color: #151515;
 }
 #nav-part1{
     display: flex;
@@ -115,6 +117,10 @@ nav{
     display: flex;
     align-items: center;
     gap: 2vw;
+    position: sticky;
+    top: 10%;
+    left: 5%;
+    z-index: 9999;
 }
 #nav-part1 h6{
     font-size: 1vw;
@@ -131,6 +137,10 @@ nav{
     font-weight: 300;
     text-transform: capitalize;
 }
+/* #page1 {
+    padding-top: 4vw;
+
+} */
 #page1 #h1tags{
     margin-top: 4vw;
     position: relative;
@@ -153,6 +163,81 @@ nav{
     font-weight: 500;
     font-family: silk serif;
     font-size: 3vw;
+}
+#menupage{
+    height: 100vh;
+    width: 100%;
+    background-color: #151515;
+    padding: 8vw 5vw;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    display: none;
+}
+#menupage #menulist{
+width: 60%;
+}
+
+#menupage #menulist .page-header{
+    padding: 0;
+    margin: 0;
+    height: 8vw;
+    /* background-color: red; */
+    overflow: hidden;
+}
+#menupage #menulist .page-header  h3 {
+    font-size: 7.5vw;
+    font-weight: 500;
+    -webkit-text-stroke: 2px white ;
+    color: transparent ;
+    text-transform: uppercase;
+    /* background-color: red; */
+    position: absolute;
+    left: 0;
+    top: -8%;
+    font-family: silk serif;
+} 
+
+/* #menupage #menulist .page-header:hover span{
+    font-family: silk serif;
+    -webkit-text-stroke: 2px white;
+    color: transparent;
+} */
+#menupage #menulist .page-header:nth-child(1) h2 span{
+    color: transparent;
+    line-height: 9vw;
+    font-family: silk serif;
+    -webkit-text-stroke: 2px white;
+    font-weight: 100;
+}
+#menupage #menulist .page-header h3 span{
+    color: transparent;
+    line-height: 9vw;
+    font-family: silk serif;
+    -webkit-text-stroke: 2px white;
+    font-weight: 100;
+    opacity: 0;
+}
+#menupage #menulist .page-header::before{
+    scale: 0;
+}
+#menupage .footer-content{
+    /* height: 55%; */
+    display: flex;
+    padding: 0;
+    height: 100%;
+    width: 40%;
+    margin-top: -3vw;
+    justify-content: space-between;
+    /* background-color: salmon; */
+    flex-direction: column;
+    border: none;
+}
+#menupage .footer-content .social{
+    margin-top: 1vw;
+    padding: 0;
 }
 #page2{
     height: 100vh;
@@ -677,7 +762,7 @@ footer .page-header svg{
 footer .page-header:hover svg{
     right: 5%;
 }
-#footer-content{
+.footer-content{
     height: 55%;
     display: flex;
     padding: 5vw 0;
@@ -690,7 +775,7 @@ footer .page-header:hover svg{
     position: relative;
     overflow: hidden;
 }
-#footer-content h6{
+.footer-content h6{
     font-size: 2vw;
     font-weight: 300;
     text-transform: capitalize;
@@ -700,7 +785,7 @@ footer .page-header:hover svg{
     position: relative;
     transition: all ease-in .3s;
 }
-#footer-content .list:nth-child(2) h6::after{
+.footer-content .list:nth-child(2) h6::after{
     content: "dribble";
     font-size: 2vw;    
     font-weight: 300;
@@ -712,7 +797,7 @@ footer .page-header:hover svg{
     /* overflow: hidden; */
     top: 100%;
 }
-#footer-content .list:nth-child(3) h6::after{
+.footer-content .list:nth-child(3) h6::after{
     content: "behance";
     font-size: 2vw;
     font-weight: 300;
@@ -722,7 +807,7 @@ footer .page-header:hover svg{
     left: 0%;
     top: 100%;
 }
-#footer-content .list:nth-child(4) h6::after{
+.footer-content .list:nth-child(4) h6::after{
     content: "instagram";
     font-size: 2vw;
     font-weight: 300;
@@ -732,7 +817,7 @@ footer .page-header:hover svg{
     left: 0%;
     top: 100%;
 }
-#footer-content .list:nth-child(5) h6::after{
+.footer-content .list:nth-child(5) h6::after{
     content: "facebook";
     font-size: 2vw;
     font-weight: 300;
@@ -742,7 +827,7 @@ footer .page-header:hover svg{
     left: 0%;
     top: 100%;
 }
-#footer-content .list:nth-child(6) h6::after{
+.footer-content .list:nth-child(6) h6::after{
     content: "twitter";
     font-size: 2vw;
     font-weight: 300;
@@ -752,7 +837,7 @@ footer .page-header:hover svg{
     left: 0%;
     top: 100%;
 }
-#footer-content .list:nth-child(7) h6::after{
+.footer-content .list:nth-child(7) h6::after{
     content: "youtube";
     font-size: 2vw;
     font-weight: 300;
@@ -762,20 +847,20 @@ footer .page-header:hover svg{
     left: 0%;
     top: 100%;
 }
-#footer-content .list:hover h6{
+.footer-content .list:hover h6{
     transform: translateY(-100%);
 }
-#footer-content h4{
+.footer-content h4{
     margin-bottom: 1vw;
     font-size: 1.2vw;
     font-weight: 400;
     text-transform: capitalize;
 
 }
-#footer-content .social:nth-child(3) .list h6{
+.footer-content .social:nth-child(3) .list h6{
     text-decoration: underline;
 }
-#footer-content .social:nth-child(3) .list h6::after{
+.footer-content .social:nth-child(3) .list h6::after{
     content: "info@Obys.Agency";
     font-size: 2vw;
     font-weight: 300;
@@ -790,3 +875,38 @@ footer p{
     font-weight: 300;
     margin-top: 3vw;
 }
+@media (max-width:600px) {
+    body,html{
+        overflow-x: hidden;
+    }
+    #page1{
+        height: 70vh;
+        width: 100%;
+        position: relative;
+    }
+    nav{
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        padding: 7vw 6vw;
+        background-color: #151515;
+    }
+    #nav-part1{
+        display: flex;
+        align-items: start;
+    }
+    #logo{
+        /* background-color: red; */
+        gap: 60vw;
+    }
+    #logo svg:nth-child(2){
+        /* background-color: red; */
+        scale: .8;
+    }
+    #nav-part1 h6{
+    display: none;
+    }
+    #nav-part2{
+        display: none;
+    }
+}  
